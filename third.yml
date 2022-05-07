@@ -1,0 +1,13 @@
+---
+- hosts: ans
+  become_user: root
+  become: true
+  tasks:
+   - name: create a user
+     user: name=tom password=redhattom123 state=present
+
+   - name: create a group
+     group: name=india state=present
+
+   - name: add user to the group
+     user: name=tom group=india append=yes

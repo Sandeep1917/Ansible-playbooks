@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+    - name: hello tag example
+      debug:
+        msg: "hello..!!"
+      tags:
+         - hello
+
+    - name: notags here
+      debug:
+        msg: "no tags used ..!!"
+      
+    - name: hi bangalore
+      debug:
+        msg: "hi bangalore"
+      tags:
+        - hi

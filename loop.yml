@@ -1,0 +1,18 @@
+---
+- hosts: ans
+  become_user: root
+  become: true
+
+  tasks:
+    - name: create multiple users i loop
+      user:
+        name: '{{ item }}'
+        state: present
+
+      loop:
+        - john1
+        - tom1
+        - user1
+        - andrew1
+        - user2
+        - user3

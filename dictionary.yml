@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become_user: root
+  become: true
+
+  tasks:
+    - name: create users with id's
+      user:
+        name: '{{ item.name }}'
+        uid: '{{ item.uid }}'
+        state: present
+
+      loop:
+        - name: john2
+          uid: 121
+        - name: tom2
+          uid: 122
+        - name: andrew2
+          uid: 123
